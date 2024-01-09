@@ -1,3 +1,4 @@
+@javascript
 Feature: F01 Authentication
 
 
