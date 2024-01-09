@@ -1,5 +1,5 @@
 When('I am a guest') do
-  context.current_user = Guest.new
+  context.set_user Guest.new
 end
 
 When('I open the main page') do
