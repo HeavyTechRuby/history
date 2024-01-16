@@ -97,7 +97,7 @@ jobs:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
           # REDIS_URL: redis://localhost:6379/0
-        run: bin/rails db:create db:migrate db:seed && ./bin/cucumber
+        run: ./bin/cucumber
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
