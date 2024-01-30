@@ -51,3 +51,43 @@ end
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
+
+
+Capybara.register_driver :firefox_remote do |app|
+  options = Selenium::WebDriver::Firefox::Options.new
+  options.add_argument("--headless") if ENV.fetch("HEADLESS", "true") == "true"
+
+  options.add_argument("--window-size=1280,720")
+  options.add_argument("--no-sandbox")
+  # options.add_argument("--disable-dev-shm-usage")
+  # Capybara::Selenium::Driver.new(
+  #   app,
+  #   browser: :chrome,
+  #   url: "http://#{ENV.fetch("SELENIUM_HOST", "0.0.0.0")}:#{ENV.fetch("SELENIUM_PORT", "4444")}/wd/hub",
+  #   options: options
+  # )
+
+  Capybara::Selenium::Driver.new(
+    app,
+    browser: :remote,
+    url: "http://#{ENV.fetch('SELENIUM_HOST', '0.0.0.0')}:#{ENV.fetch('SELENIUM_PORT', '4444')}/wd/hub",
+    options:
+  )
+end
+
+
+Capybara.register_driver :firefox do |app|
+  options = Selenium::WebDriver::Firefox::Options.new
+  options.add_argument("--headless") if ENV.fetch("HEADLESS", "true") == "true"
+
+  options.add_argument("--window-size=1280,720")
+  options.add_argument("--no-sandbox")
+  options.add_argument("--disable-dev-shm-usage")
+  Capybara::Selenium::Driver.new(
+    app,
+    browser: :firefox,
+    options:
+  )
+end
+
+Capybara.javascript_driver = :firefox
