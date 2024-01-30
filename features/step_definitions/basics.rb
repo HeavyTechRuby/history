@@ -6,16 +6,15 @@ Given('I am a user') do
   context.set_user Testing::User.new
 end
 
-When('I open the main page') do
+When('open the main page') do
   visit "/"
 end
 
-When('I see text {string}') do |text|
+When('see text {string}') do |text|
   expect(page).to have_content text
 end
 
-
-When('I click on {string}') do |item|
+When('click on {string}') do |item|
   click_on item
 end
 
