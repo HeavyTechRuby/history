@@ -16,7 +16,6 @@ RSpec.describe "stories/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", story_path(story), "post" do
-
       assert_select "input[name=?]", "story[address]"
 
       assert_select "textarea[name=?]", "story[body]"

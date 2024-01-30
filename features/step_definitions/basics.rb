@@ -22,4 +22,3 @@ end
 When('fill in {string} with {string}') do |item, text|
   fill_in item, with: text
 end
-
