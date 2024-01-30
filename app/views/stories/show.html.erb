@@ -1,6 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @story %>
+<h1><%= @story.address %></h1>
+
+<p>
+<%= markdown @story.body %>
+</p>
 
 <div>
   <%= link_to "Edit this story", edit_story_path(@story) %> |
