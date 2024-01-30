@@ -5,8 +5,4 @@
 
 <h2><%= t("recent_stories") %></h2> 
 
-<ul>
-  <% @recent_stories.each do |story| %>
-    <li><%= link_to story.address, story %></li>
-  <% end %>
-</ul>
+<%= render partial: 'stories/recent' %>

@@ -1,0 +1,5 @@
+<ul>
+  <% RecentStories.new.each do |story| %>
+    <li><%= link_to story.address, story %></li>
+  <% end %>
+</ul>

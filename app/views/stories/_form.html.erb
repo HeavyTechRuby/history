@@ -18,7 +18,7 @@
 
   <div class="row mb-3">
     <%= form.label :body, t("story"), style: "display: block", class: "form-label" %>
-    <%= form.text_area :body, class: "form-control", rows: 10 %>
+    <%= form.rich_text_area :body %>
   </div>
 
   <%= form.submit class: "btn btn-primary mb-3" %>
