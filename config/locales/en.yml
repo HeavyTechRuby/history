@@ -28,5 +28,6 @@
 #       enabled: "ON"
 
 en:
-  new_story: "New story"
-  story: "Story"
+  new_story: New story
+  story: Story
+  recent_stories: Recent Stories

@@ -6,7 +6,7 @@ Feature: F01 Add history
 		When click on "New story"
 		And fill in "Address" with "Moscow, Lenins street, 12"
 		And fill in "Story" with "This builing was completely destroyed during WW"
-		And click on "Save"
+		And click on "Create Story"
 		Then open the main page
 		And click on "Moscow, Lenins street, 12"
 		And see text "This builing was completely destroyed during WW"
