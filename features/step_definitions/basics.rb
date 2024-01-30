@@ -20,6 +20,6 @@ When('I click on {string}') do |item|
 end
 
 When('fill in {string} with {string}') do |item, text|
-  fill_on item, with: text
+  fill_in item, with: text
 end
 
