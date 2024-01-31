@@ -22,8 +22,7 @@ When('fill in {string} with {string}') do |item, text|
   fill_in item, with: text
 end
 
-# https://github.com/rails/rails/blob/main/actiontext/lib/action_text/system_test_helper.rb
-# https://stackoverflow.com/questions/45962746/rails-capybara-populate-hidden-field-from-trix-editor
-# When('fill in rich text {string} with {string}') do |item, text|
-#   fill_in item, with: text
-# end
+# TODO: use 'item' to select the right editor
+When('fill in rich text {string} with {string}') do |_item, text|
+  find('trix-editor').click.set(text)
+end
