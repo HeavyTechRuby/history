@@ -1,3 +1,5 @@
+[![Hits-of-Code](https://hitsofcode.com/github/sergio-fry/history?branch=main)](https://hitsofcode.com/github/sergio-fry/history/view?branch=main)
+
 # History
 
 ## Build
