@@ -1,3 +1,5 @@
+![Badge](https://sergio-fry.github.io/history/coverage/coverage_badge_total.svg)
+
 # History
 
 ## Build

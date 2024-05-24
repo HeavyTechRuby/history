@@ -1,4 +1,15 @@
 require 'pathname'
+require 'simplecov'
+require 'simplecov_small_badge'
+
+SimpleCov.start do
+  add_filter '/spec/'
+  # call SimpleCov::Formatter::BadgeFormatter after the normal HTMLFormatter
+  SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::HTMLFormatter,
+  SimpleCovSmallBadge::Formatter
+  ])
+end
 
 class RootPath
   def pathname

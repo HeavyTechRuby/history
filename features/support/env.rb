@@ -4,6 +4,8 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
+require 'simplecov'
+SimpleCov.start
 
 require 'cucumber/rails'
 
@@ -55,6 +57,7 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 
 Capybara.register_driver :firefox_remote do |app|
   options = Selenium::WebDriver::Firefox::Options.new
+  # options.binary = "/usr/bin/firefox"
   options.add_argument("--headless") if ENV.fetch("HEADLESS", "true") == "true"
 
   options.add_argument("--window-size=1280,720")
