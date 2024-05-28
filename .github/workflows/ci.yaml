@@ -78,10 +78,7 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v4.0.1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -109,3 +106,8 @@ jobs:
           name: screenshots
           path: ${{ github.workspace }}/tmp/screenshots
           if-no-files-found: ignore
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
