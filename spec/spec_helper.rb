@@ -1,4 +1,9 @@
 require 'pathname'
+require 'simplecov'
+
+SimpleCov.start do
+  add_filter '/spec/'
+end
 
 class RootPath
   def pathname
