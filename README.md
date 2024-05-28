@@ -1,4 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/bd75c70806614261603d/maintainability)](https://codeclimate.com/github/sergio-fry/history/maintainability)
+[![Hits-of-Code](https://hitsofcode.com/github/sergio-fry/history?branch=main)](https://hitsofcode.com/github/sergio-fry/history/view?branch=main)
 
 # History
 
