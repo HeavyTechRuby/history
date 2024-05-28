@@ -1,4 +1,5 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/08a1c56c0220109b03d21d0f0ce62db45737be38239f2fd3d955e452312600eb/maintainability)](https://codeclimate.com/github/sergio-fry/history/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/bd75c70806614261603d/maintainability)](https://codeclimate.com/github/sergio-fry/history/maintainability)
+[![Hits-of-Code](https://hitsofcode.com/github/sergio-fry/history?branch=main)](https://hitsofcode.com/github/sergio-fry/history/view?branch=main)
 [![codecov](https://codecov.io/gh/sergio-fry/history/graph/badge.svg?token=T46MLVIHEE)](https://codecov.io/gh/sergio-fry/history)
 
 # History
