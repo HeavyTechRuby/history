@@ -1,7 +1,11 @@
-Затем('вижу текст {string}') do |text|
-  expect(page).to have_content text
+Дано('я гость') do
+  context.set_user Testing::Guest.new
 end
 
-Когда('открываю главную страницу') do
+Когда('я открываю главную страницу') do
   visit "/"
+end
+
+Затем('вижу текст {string}') do |text|
+  expect(page).to have_content text
 end
