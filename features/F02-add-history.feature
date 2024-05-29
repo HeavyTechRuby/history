@@ -1,5 +1,5 @@
 @javascript
-Feature: F01 Add history
+Feature: F02 Add history
 
 	Scenario: as user I can tell new story about building
 		Given I am a user
