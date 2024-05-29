@@ -1,3 +1,5 @@
+# language: ru
+
 @javascript
 Функция: F01 Аутентификация
 
