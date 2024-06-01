@@ -8,6 +8,7 @@ class StoriesController < ApplicationController
 
   # GET /stories/1 or /stories/1.json
   def show
+    @comments = @story.comments.order(created_at: :desc)
     @comment = @story.comments.build
   end
 

@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to @story, notice: "Comment was successfully created." }
         format.json { render "stories/show", status: :created, location: @comment }
       else
+        @comments = @story.comments.order(created_at: :desc)
         format.html { render "stories/show", status: :unprocessable_entity }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
@@ -45,7 +46,6 @@ class CommentsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_comment
     @comment = Comment.find(params[:id])
   end
@@ -54,7 +54,6 @@ class CommentsController < ApplicationController
     @story = Story.find(params[:story_id])
   end
 
-  # Only allow a list of trusted parameters through.
   def comment_params
     params.require(:comment).permit(:body, :story_id)
   end

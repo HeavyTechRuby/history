@@ -2,9 +2,7 @@
 
 <h1><%= @story.address %></h1>
 
-<p>
-<%= @story.body %>
-</p>
+<p><%= @story.body %></p>
 
 <div>
   <%= link_to "Edit this story", edit_story_path(@story) %> |
@@ -14,12 +12,10 @@
 </div>
 
 <div class='comments'>
-  <p>Comments</p>
-  <% @story.comments.each do |comment| %>
-    <div class='comment'>
-      <p><%= comment.created_at %> <%= comment.body %></p>
-    </div>
+  <p><strong>Comments</strong></p>
+  <% @comments.each do |comment| %>
+    <%= render partial: "comments/comment", locals: { comment: comment } %>
   <% end %>
 </div>
 
-<%= render 'comments/form', story: @story, comment: @comment %>
+<%= render partial: "comments/form", locals: { comment: @story.comments.build } %>
