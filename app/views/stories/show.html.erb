@@ -12,3 +12,14 @@
 
   <%= button_to "Destroy this story", @story, method: :delete %>
 </div>
+
+<div class='comments'>
+  <p>Comments</p>
+  <% @story.comments.each do |comment| %>
+    <div class='comment'>
+      <p><%= comment.created_at %> <%= comment.body %></p>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'comments/form', story: @story, comment: @comment %>

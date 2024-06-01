@@ -8,6 +8,7 @@ class StoriesController < ApplicationController
 
   # GET /stories/1 or /stories/1.json
   def show
+    @comment = @story.comments.build
   end
 
   # GET /stories/new
@@ -28,7 +29,7 @@ class StoriesController < ApplicationController
         format.html { redirect_to story_url(@story), notice: "Story was successfully created." }
         format.json { render :show, status: :created, location: @story }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to :edit, status: :unprocessable_entity }
         format.json { render json: @story.errors, status: :unprocessable_entity }
       end
     end
@@ -41,7 +42,7 @@ class StoriesController < ApplicationController
         format.html { redirect_to story_url(@story), notice: "Story was successfully updated." }
         format.json { render :show, status: :ok, location: @story }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { redirect_to :edit, status: :unprocessable_entity }
         format.json { render json: @story.errors, status: :unprocessable_entity }
       end
     end
