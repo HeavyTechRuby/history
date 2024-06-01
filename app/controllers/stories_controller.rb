@@ -29,7 +29,7 @@ class StoriesController < ApplicationController
         format.html { redirect_to story_url(@story), notice: "Story was successfully created." }
         format.json { render :show, status: :created, location: @story }
       else
-        format.html { redirect_to :edit, status: :unprocessable_entity }
+        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @story.errors, status: :unprocessable_entity }
       end
     end
@@ -42,7 +42,7 @@ class StoriesController < ApplicationController
         format.html { redirect_to story_url(@story), notice: "Story was successfully updated." }
         format.json { render :show, status: :ok, location: @story }
       else
-        format.html { redirect_to :edit, status: :unprocessable_entity }
+        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @story.errors, status: :unprocessable_entity }
       end
     end
