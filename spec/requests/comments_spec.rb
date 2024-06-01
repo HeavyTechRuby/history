@@ -34,13 +34,13 @@ RSpec.describe "/comments", type: :request do
     }
   }
 
-  # describe "GET stoories/show" do
-  #   it "renders a successful response" do
-  #     Comment.create!(valid_attributes)
-  #     get story_url(id: story.id)
-  #     expect(response).to be_successful
-  #   end
-  # end
+  describe "GET stoories/show" do
+    it "renders a successful response" do
+      Comment.create!(valid_attributes)
+      get story_url(id: story.id)
+      expect(response).to be_successful
+    end
+  end
 
   describe "POST /create" do
     context "with valid parameters" do
@@ -56,19 +56,19 @@ RSpec.describe "/comments", type: :request do
       end
     end
 
-    # context "with invalid parameters" do
-    #   it "does not create a new Comment" do
-    #     expect {
-    #       post story_comments_url(story), params: { comment: invalid_attributes }
-    #     }.to change(Comment, :count).by(0)
-    #   end
+    context "with invalid parameters" do
+      it "does not create a new Comment" do
+        expect {
+          post story_comments_url(story), params: { comment: invalid_attributes }
+        }.to change(Comment, :count).by(0)
+      end
 
 
-    #   it "renders a response with 422 status (i.e. to display the 'new' template)" do
-    #     post story_comments_url(story), params: { comment: invalid_attributes }
-    #     expect(response).to have_http_status(:unprocessable_entity)
-    #   end
-    # end
+      it "renders a response with 422 status (i.e. to display the 'new' template)" do
+        post story_comments_url(story), params: { comment: invalid_attributes }
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+    end
   end
 
   describe "PATCH /update" do
