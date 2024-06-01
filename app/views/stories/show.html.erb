@@ -12,10 +12,14 @@
 </div>
 
 <div class='comments'>
-  <p><strong>Comments</strong></p>
-  <% @comments.each do |comment| %>
-    <%= render partial: "comments/comment", locals: { comment: comment } %>
-  <% end %>
+  <h3>
+    <%= t("comments.comments_list") %>
+  </h3>
+  <ul class="list-group">
+    <% @comments.each do |comment| %>
+      <%= render partial: "comments/comment", locals: { comment: comment } %>
+    <% end %>
+  </ul>
 </div>
 
 <%= render partial: "comments/form", locals: { comment: @story.comments.build } %>

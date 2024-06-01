@@ -1,5 +1,7 @@
 <div id="<%= dom_id comment %>">
-  <p>
-    <%= comment.created_at %> - <b><%= comment.body %></b>
-  </p>
+  <li class="list-group-item">
+    <small class="text-body-secondary">
+      <%= comment.created_at.strftime("%B %d %Y, %l:%M%P") %> - <b><%= comment.body %></b>
+    </small>
+  </li>
 </div>
