@@ -74,7 +74,8 @@ group :test do
   gem "cucumber-rails", require: false
   gem "database_cleaner"
   gem "selenium-webdriver"
-  gem "simplecov", require: false
-  gem "simplecov-lcov", require: false
-  gem "codecov", require: false
+  gem "simplecov", "~> 0.21", require: false
+  # gem "simplecov-lcov", require: false
+  # gem "codecov", require: false
+  gem "simplecov-json", require: false
 end
