@@ -75,6 +75,7 @@ group :test do
   gem "database_cleaner"
   gem "selenium-webdriver"
   gem "simplecov", require: false
-  gem "simplecov-lcov", require: false
-  gem "codecov", require: false
+  # gem "simplecov-lcov", require: false
+  # gem "codecov", require: false
+  gem "simplecov-json", require: false
 end
