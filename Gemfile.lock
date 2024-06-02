@@ -385,7 +385,7 @@ DEPENDENCIES
   rspec-rails
   rubocop-rails-omakase
   selenium-webdriver
-  simplecov
+  simplecov (~> 0.21)
   simplecov-json
   sprockets-rails
   stimulus-rails
