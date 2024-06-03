@@ -75,5 +75,5 @@ group :test do
   gem "database_cleaner"
   gem "selenium-webdriver"
   gem "simplecov", require: false
-  gem "shoulda-matchers", "~> 5.0"
+  gem "shoulda-matchers", "~> 6.2"
 end
