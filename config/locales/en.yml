@@ -35,3 +35,7 @@ en:
     recent_comments: Recent comments
     add_comment: Add a comment
     your_message: Your message
+    form:
+      error: error
+      prohibited: prohibited this story from being saved
+      create_comment: Create Comment

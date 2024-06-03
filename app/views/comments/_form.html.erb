@@ -10,7 +10,7 @@
               <div class="alert alert-danger" role="alert">
                 <div id="error_explanation">
                   <h2>
-                    <%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved: 
+                    <%= pluralize(@comment.errors.count, t("comments.form.error")) %> <%= t("comments.form.error") %>:
                   </h2>
                   <ul>
                     <% @comment.errors.each do |error| %>
@@ -26,7 +26,7 @@
                 <%= form.text_area :body, class: 'form-control', id: 'textAreaExample', rows: '4' %>
               </div>
               <div class="d-flex justify-content-between mt-3">
-                <%= form.submit "Create Comment", class: 'btn btn-primary' %>
+                <%= form.submit t("comments.form.create_comment"), class: 'btn btn-primary' %>
               </div>
             </div>
           <% end %>
