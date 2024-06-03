@@ -60,14 +60,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_01_043132) do
     t.index ["story_id"], name: "index_comments_on_story_id"
   end
 
-  create_table "discussions", force: :cascade do |t|
-    t.string "body"
-    t.bigint "story_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["story_id"], name: "index_discussions_on_story_id"
-  end
-
   create_table "stories", force: :cascade do |t|
     t.string "address"
     t.text "body"
