@@ -38,5 +38,8 @@ module History
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.i18n.available_locales = [:ru, :en]
+    config.i18n.default_locale = :ru
   end
 end
