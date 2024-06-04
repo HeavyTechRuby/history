@@ -26,3 +26,8 @@ ru:
     label:
       comment:
         body: Ваше сообщение
+
+  activerecord:
+    attributes:
+      comment:
+        body: Сообщение
