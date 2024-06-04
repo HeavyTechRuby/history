@@ -34,6 +34,7 @@ en:
   comments:
     recent_comments: Recent comments
     add_comment: Add a comment
+    edit_comment: Editing comment
     your_message: Your message
     form:
       error: error

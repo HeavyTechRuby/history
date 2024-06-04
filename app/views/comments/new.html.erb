@@ -1,3 +1,10 @@
-<h1>New comment</h1>
-
-<%= render "form", comment: @comment %>
+<div class="container my-2 py-2 text-body">
+  <div class="row d-flex">
+    <div class="card">
+      <div class="card-body p-4">
+        <h3><%= t("comments.add_comment") %></h3>
+        <%= render partial: "comments/form" %>
+      </div>
+    </div>
+  </div>
+</div>

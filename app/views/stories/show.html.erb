@@ -14,13 +14,5 @@
   <%= button_to "Destroy this story", @story, method: :delete %>
 </div>
 
-<div class='comments'>
-  <h3>
-    <%= t("comments.comments_list") %>
-  </h3>
-  <ul class="list-group">
-    <%= render @comments %>
-  </ul>
-</div>
-
-<%= render partial: "comments/form", locals: { comment: @story.comments.build } %>
+<%= render template: "comments/index" %>
+<%= render template: "comments/new" %>
