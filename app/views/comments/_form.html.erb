@@ -3,7 +3,7 @@
     <div class="alert alert-danger" role="alert">
       <div id="error_explanation">
         <h2>
-          <%= pluralize(@comment.errors.count, t("comments.form.errors.one"), t("comments.form.errors.other")) %>:
+          <%= pluralize(@comment.errors.count, t(".form.errors.one"), t("comments.form.errors.other")) %>:
         </h2>
         <ul>
           <% @comment.errors.each do |error| %>
@@ -15,11 +15,11 @@
   <% end %>
   <div class="w-100">
     <div data-mdb-input-init class="form-outline">
-      <%= form.label :body, t('comments.your_message'), class: 'form-label', for: 'textAreaExample' %>
+      <%= form.label :body, t('.your_message'), class: 'form-label', for: 'textAreaExample' %>
       <%= form.text_area :body, class: 'form-control', id: 'textAreaExample', rows: '4' %>
     </div>
     <div class="d-flex justify-content-between mt-3">
-      <%= form.submit t("comments.form.create_comment"), class: 'btn btn-primary' %>
+      <%= form.submit t(".create_comment"), class: 'btn btn-primary' %>
     </div>
   </div>
 <% end %>

@@ -36,6 +36,11 @@ en:
     add_comment: Add a comment
     edit_comment: Editing comment
     your_message: Your message
+    edit: Edit this comment
+    destroy: Destroy this comment
+    created: Comment was successfully created.
+    updated: Comment was successfully updated.
+    destroyed: Comment was successfully destroyed.
     form:
       error: error
       prohibited: prohibited this story from being saved
