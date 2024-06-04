@@ -6,7 +6,6 @@ ru:
     recent_comments: Последние комментарии
     add_comment: Оставить комментарий
     edit_comment: Редактировать комментарий
-    your_message: Ваше сообщение
     created: Комментарий успешно создан.
     updated: Комментарий успешно обновлен.
     destroyed: Комментарий успешно удалён.
@@ -15,7 +14,15 @@ ru:
     form:
       error: ошибка
       prohibited: запрещает сохранять этот комментарий
-      create_comment: Создать комментарий
       errors:
         one: ошибка
         other: ошибок
+
+  helpers:
+    submit:
+      comment:
+        create: Создать комментарий
+    
+    label:
+      comment:
+        body: Ваше сообщение

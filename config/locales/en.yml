@@ -44,8 +44,17 @@ en:
     form:
       error: error
       prohibited: prohibited this story from being saved
-      create_comment: Create Comment
       errors:
         one: error
         other: errors
+
+  helpers:
+    submit:
+      comment:
+        create: Create comment
+    
+    label:
+      comment:
+        body: Description
+
       
