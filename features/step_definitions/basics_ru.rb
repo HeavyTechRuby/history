@@ -2,13 +2,8 @@
   context.set_user Testing::Guest.new
 end
 
-Дано('история с адресом {string} и телом {string}') do |address, body|
+И('история с адресом {string} и телом {string}') do |address, body|
   Story.create!(address: address, body: body)
-end
-
-Дано('история с адресом {string} и телом {string} вместе с комментарием {string}') do |address, body, comment|
-  story = Story.create!(address: address, body: body)
-  story.comments.create!(body: comment)
 end
 
 Когда('я открываю главную страницу') do
@@ -21,6 +16,10 @@ end
 
 И('нажимаю на {string}') do |item|
   click_on item
+end
+
+И('с комментарием {string}') do |text|
+  Story.last.comments.create!(body: text)
 end
 
 Затем('заполняю поле {string} со значением {string}') do |item, text|
