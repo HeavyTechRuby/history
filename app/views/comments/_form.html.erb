@@ -3,7 +3,7 @@
     <div class="alert alert-danger" role="alert">
       <div id="error_explanation">
         <h2>
-          <%= pluralize(@comment.errors.count, t("comments.form.error")) %> <%= t("comments.form.error") %>:
+          <%= pluralize(@comment.errors.count, t("comments.form.errors.one"), t("comments.form.errors.other")) %>:
         </h2>
         <ul>
           <% @comment.errors.each do |error| %>

@@ -2,3 +2,15 @@ ru:
   new_story: Новая история
   story: История
   recent_stories: Недавние истории
+  comments:
+    recent_comments: Последние комментарии
+    add_comment: Оставить комментарий
+    edit_comment: Редактировать комментарий
+    your_message: Ваше сообщение
+    form:
+      error: ошибка
+      prohibited: запрещает сохранять этот комментарий
+      create_comment: Создать комментарий
+      errors:
+        one: ошибка
+        other: ошибок

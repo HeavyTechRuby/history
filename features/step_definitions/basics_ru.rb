@@ -30,10 +30,6 @@ end
   click_on item
 end
 
-Когда('заполняю поле {string} со значением {string}') do |item, text|
-  fill_in item, with: text
-end
-
 # TODO: use 'item' to select the right editor
 When('заполняю многострочное поле {string} со значением {string}') do |_item, text|
   find('trix-editor').click.set(text)
