@@ -1,21 +1,22 @@
+# language: ru
+
 @javascript
-Feature: F01 Authentication
+Функция: F01 Аутентификация
 
+	Сценарий: Я, как гость, могу читать информацию без ограничений без регистрации.
 
-	Scenario: as a guest I can open main page to start read info 
-
-		Given I am a guest
-		When open the main page
-		Then see text "Building history"
+		Дано я гость
+		Когда я открываю главную страницу
+		Затем вижу текст "Building History"
 
 	@pending
-	Scenario: as a guest register to become a user
+	Сценарий: Я, как гость, могу зарегистрироваться в системе, чтобы стать пользователем 
 
-		Given I am a guest
-		When open the main page
-		And click on "Log In"
-		And click on "Register"
-		And fill in "Email" with "new.user@example.com"
-		And fill in "Password" with "secret123"
-		And fill in "Password Confirmation" with "secret123"
-		Then see text "Loggin in as New User"
+		Дано я гость
+		Когда я открываю главную страницу
+		И нажимаю на кнопку "Логин"
+		И нажимаю на кнопку "Регистрация"
+		И заполняю поле "Электронная почта" со значением "new.user@example.com"
+		И заполняю поле "Пароль" со значением "secret123"
+    И заполняю поле "Подтверждение пароля" со значением "secret123"
+		Затем вижу текст "Вход в систему как Новый Пользователь"
