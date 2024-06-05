@@ -1,6 +1,6 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/bd75c70806614261603d/maintainability)](https://codeclimate.com/github/sergio-fry/history/maintainability)
-[![Hits-of-Code](https://hitsofcode.com/github/sergio-fry/history?branch=main)](https://hitsofcode.com/github/sergio-fry/history/view?branch=main)
-[![codecov](https://codecov.io/gh/sergio-fry/history/graph/badge.svg?token=T46MLVIHEE)](https://codecov.io/gh/sergio-fry/history)
+[![Maintainability](https://codeclimate.com/github/HeavyTechRuby/history.png)](https://codeclimate.com/github/HeavyTechRuby/history)
+[![Hits-of-Code](https://hitsofcode.com/github/HeavyTechRuby/history?branch=main)](https://hitsofcode.com/github/HeavyTechRuby/history/view?branch=main)
+[![codecov](https://codecov.io/gh/HeavyTechRuby/history/graph/badge.svg?token=T46MLVIHEE)](https://codecov.io/gh/HeavyTechRuby/history)
 
 # History
 
