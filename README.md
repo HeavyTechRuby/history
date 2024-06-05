@@ -1,6 +1,6 @@
 [![Maintainability](https://codeclimate.com/github/HeavyTechRuby/history.png)](https://codeclimate.com/github/HeavyTechRuby/history)
 [![Hits-of-Code](https://hitsofcode.com/github/HeavyTechRuby/history?branch=main)](https://hitsofcode.com/github/HeavyTechRuby/history/view?branch=main)
-[![codecov](https://codecov.io/gh/HeavyTechRuby/history/graph/badge.svg?token=T46MLVIHEE)](https://codecov.io/gh/HeavyTechRuby/history)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a3a5daaab0db5b759cc3/test_coverage)](https://codeclimate.com/github/HeavyTechRuby/history/test_coverage)
 
 # History
 
