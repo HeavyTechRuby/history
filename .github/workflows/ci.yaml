@@ -126,11 +126,13 @@ jobs:
           ./bin/rspec
 
       - name: Upload coverage to CodeClimate
+        if: github.ref == 'refs/heads/main'
         run: ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.json
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
 
       - name: Upload coverage to CodeClimate
+        if: github.ref == 'refs/heads/main'
         run: ./cc-test-reporter upload-coverage
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
