@@ -16,7 +16,7 @@ en:
     back_comments: Back to comments
     form:
       error: error
-      prohibited: prohibited this story from being saved
+      prohibited: Unable to save comment
       errors:
         one: error
         other: errors

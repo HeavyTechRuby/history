@@ -16,7 +16,7 @@ ru:
     back_comments: Назад к комментариям
     form:
       error: ошибка
-      prohibited: запрещает сохранять этот комментарий
+      prohibited: Невозможно сохранить комментарий
       errors:
         one: ошибка
         other: ошибок
