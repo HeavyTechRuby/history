@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.2.2"
+ruby "3.3.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3"
@@ -76,6 +76,7 @@ group :test do
   gem "cucumber-rails", require: false
   gem "database_cleaner"
   gem "selenium-webdriver"
-  gem "simplecov", require: false
+  gem "simplecov", "~> 0.21", require: false
+  gem "simplecov-json", require: false
   gem "shoulda-matchers", "~> 6.2"
 end
