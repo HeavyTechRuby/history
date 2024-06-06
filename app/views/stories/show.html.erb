@@ -1,9 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= @story.address %></h1>
-
+<h1>
+  <%= @story.address %>
+</h1>
 <p>
-<%= @story.body %>
+  <%= @story.body %>
 </p>
 
 <div>
@@ -12,3 +13,6 @@
 
   <%= button_to "Destroy this story", @story, method: :delete %>
 </div>
+
+<%= render template: "comments/index" %>
+<%= render template: "comments/new" %>

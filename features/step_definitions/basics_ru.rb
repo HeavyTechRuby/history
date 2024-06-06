@@ -6,20 +6,28 @@ end
   context.set_user Testing::User.new
 end
 
-Когда('я открываю главную страницу') do
-  visit "/"
+И('история с адресом {string} и телом {string}') do |address, body|
+  Story.create!(address: address, body: body)
 end
 
 Затем('вижу текст {string}') do |text|
   expect(page).to have_content text
 end
 
-Когда(/^нажимаю на(?: кнопку)? "(.*?)"$/) do |item|
-  click_on item
+И('с комментарием {string}') do |text|
+  Story.last.comments.create!(body: text)
 end
 
-Когда('заполняю поле {string} со значением {string}') do |item, text|
+Затем('заполняю поле {string} со значением {string}') do |item, text|
   fill_in item, with: text
+end
+
+Когда('я открываю главную страницу') do
+  visit "/"
+end
+
+Когда(/^нажимаю на(?: кнопку)? "(.*?)"$/) do |item|
+  click_on item
 end
 
 # TODO: use 'item' to select the right editor
