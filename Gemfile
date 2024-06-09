@@ -78,5 +78,7 @@ group :test do
   gem "selenium-webdriver"
   gem "simplecov", "~> 0.21", require: false
   gem "simplecov-json", require: false
+  gem "simplecov-lcov", "~> 0.8", require: false
   gem "shoulda-matchers", "~> 6.2"
+  gem "undercover", "~> 0.5"
 end
