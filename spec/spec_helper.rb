@@ -1,15 +1,5 @@
 require 'pathname'
 require 'simplecov'
-require "simplecov_json_formatter"
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::HTMLFormatter,
-  SimpleCov::Formatter::JSONFormatter
-  ])
-
-SimpleCov.start do
-  add_filter '/spec/'
-end
 
 class RootPath
   def pathname
