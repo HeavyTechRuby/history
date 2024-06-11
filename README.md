@@ -11,7 +11,8 @@ To run locally you should add local ENV via config files: .env.local, .env.test.
 Example config:
 
 ```bash
-echo "DATABASE_URL=postgresql://postgres@0.0.0.0:5432/history_test" >> .env.test.local
+echo "DATABASE_URL=postgresql://postgres@0.0.0.0:5432/history_test
+      POSTGRES_PASSWORD=testpassword" >> .env.test.local
 cat .env.test.local
 ```
 
