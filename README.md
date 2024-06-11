@@ -15,8 +15,24 @@ echo "DATABASE_URL=postgresql://postgres@0.0.0.0:5432/history_test
       POSTGRES_PASSWORD=testpassword" >> .env.test.local
 cat .env.test.local
 ```
+Then install dip gem to use docker commands:
 
-* bundle install
-* rails db:create db:migrate
-* make
+```
+gem install dip
+docker-compose build
+```
 
+To run Rails commands:
+`dip rails [command]`
+
+To run /bin/bash session in container:
+`dip runner`
+
+To run Bundler commands:
+`dip bundle [command]`
+
+To run RSpec commands:
+`dip rspec [command]`
+
+To run Cucumber tests:
+`dip cucumber`
