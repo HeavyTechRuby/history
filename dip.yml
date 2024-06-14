@@ -1,0 +1,58 @@
+version: '7.1'
+
+environment:
+  RAILS_ENV: development
+
+compose:
+  files:
+    - docker-compose.yml
+  project_name: history
+
+interaction:
+  runner:
+    description: Open a Bash shell within a Rails container (with dependencies up)
+    service: web
+    command: /bin/bash
+    compose_run_options: [ no-deps ]
+
+  bash:
+    service: web
+    command: /bin/bash
+    compose_run_options: [no-deps]
+
+  bundle:
+    description: Run Bundler commands
+    service: web
+    command: bundle
+    compose_run_options: [ no-deps ]
+
+  rspec:
+    description: Run RSpec commands
+    service: web
+    environment:
+      RAILS_ENV: test
+    command: ./bin/rspec
+
+  cucumber:
+    description: Run Cucumber tests
+    service: web
+    environment:
+      RAILS_ENV: test
+    command: bundle exec ./bin/cucumber
+
+  rails:
+    description: Run Rails commands
+    service: web
+    command: bundle exec rails
+    subcommands:
+      s:
+        description: Run Rails server at http://localhost:3000
+        service: web
+        compose:
+          run_options: [service-ports, use-aliases]
+
+provision:
+  - (test -f .env.local) || (echo "\n\n ⚠️  .env.local file is missing\n\n"; exit 1)
+  - dip compose down --volumes
+  - dip compose up -d postgres
+  - dip bash -c ./bin/setup

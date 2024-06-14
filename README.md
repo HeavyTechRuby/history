@@ -11,11 +11,30 @@ To run locally you should add local ENV via config files: .env.local, .env.test.
 Example config:
 
 ```bash
-echo "DATABASE_URL=postgresql://postgres@0.0.0.0:5432/history_test" >> .env.test.local
+echo "DATABASE_URL=postgresql://postgres:password@postgres:5432/history_test" >> .env.test.local
 cat .env.test.local
 ```
+Then install dip gem to use docker commands:
 
-* bundle install
-* rails db:create db:migrate
-* make
+```
+gem install dip
+docker-compose build
+```
 
+Prepare database and container:
+`dip provision`
+
+To run Rails commands:
+`dip rails [command]`
+
+To run /bin/bash session in container:
+`dip runner`
+
+To run Bundler commands:
+`dip bundle [command]`
+
+To run RSpec commands:
+`dip rspec [command]`
+
+To run Cucumber tests:
+`dip cucumber`
