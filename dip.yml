@@ -15,6 +15,11 @@ interaction:
     command: /bin/bash
     compose_run_options: [ no-deps ]
 
+  bash:
+    service: web
+    command: /bin/bash
+    compose_run_options: [no-deps]
+
   bundle:
     description: Run Bundler commands
     service: web
@@ -45,3 +50,9 @@ interaction:
         service: web
         compose:
           run_options: [service-ports, use-aliases]
+
+provision:
+  - (test -f .env.local) || (echo "\n\n ⚠️  .env.local file is missing\n\n"; exit 1)
+  - dip compose down --volumes
+  - dip compose up -d postgres
+  - dip bash -c ./bin/setup
