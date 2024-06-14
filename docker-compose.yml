@@ -18,6 +18,8 @@ services:
     env_file:
       - '.env.local'
       - '.env.test.local'
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
 
 volumes:
   postgres:
