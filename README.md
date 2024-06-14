@@ -21,6 +21,9 @@ gem install dip
 docker-compose build
 ```
 
+Prepare database and container:
+`dip provision`
+
 To run Rails commands:
 `dip rails [command]`
 
