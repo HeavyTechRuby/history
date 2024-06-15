@@ -1,6 +1,13 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: %i[ show edit update destroy ]
 
+  def new_test_endpoint
+    random_number = rand(100)
+    sleep(2)
+
+    Array.new(20) { random_number + rand(3) }
+  end
+
   # GET /stories or /stories.json
   def index
     @stories = Story.all
