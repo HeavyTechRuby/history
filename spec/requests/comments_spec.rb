@@ -17,7 +17,8 @@ RSpec.describe "/comments", type: :request do
   # Comment. As you add validations to Comment, be sure to
   # adjust the attributes here as well.
   let!(:story) {
-    Story.create!
+    Story.create!(address: 'valid address',
+                  body: 'valid body')
   }
 
   let(:valid_attributes) {

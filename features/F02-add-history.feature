@@ -1,16 +1,18 @@
-@javascript
-Feature: F02 Add history
+# language: ru
 
-	Scenario: as user I can tell new story about building
-		Given I am a user
-		And open the main page
-		When click on "New story"
-		And fill in "Address" with "Moscow, Lenins street, 12"
-		And fill in rich text "Story" with "This builing was completely destroyed during WW"
-		And click on "Create Story"
-		Then open the main page
-		And click on "Moscow, Lenins street, 12"
-		And see text "This builing was completely destroyed during WW"
+@javascript
+Функция: F02 Добавление истории
+
+	Сценарий: Я, как пользователь, могу рассказать историю о здании
+		Дано я пользователь
+		И я открываю главную страницу
+		Когда нажимаю на кнопку "Новая история"
+		И заполняю поле "Address" со значением "Москва, Улица Ленина, 12"
+		И заполняю многострочное поле "Story" со значением "Это здание было полностью разрушено во время Мировой Войны"
+		Когда нажимаю на кнопку "Создать Story"
+		Затем я открываю главную страницу
+		Когда нажимаю на "Москва, Улица Ленина, 12"
+		И вижу текст "Это здание было полностью разрушено во время Мировой Войны"
 
 	
-	Scenario: as user I can suggest update for a story
+	Сценарий: Я, как пользователь, могу предложить обновление для истории

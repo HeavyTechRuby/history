@@ -1,0 +1,36 @@
+ru:
+  new_story: Новая история
+  story: История
+  recent_stories: Недавние истории
+  comments:
+    recent_comments: Последние комментарии
+    add_comment: Оставить комментарий
+    edit_comment: Редактировать комментарий
+    your_message: Ваше сообщение
+    created: Комментарий успешно создан.
+    updated: Комментарий успешно обновлен.
+    destroyed: Комментарий успешно удалён.
+    edit: Редактировать комментарий
+    show: Открыть комментарий
+    destroy: Удалить комментарий
+    back_comments: Назад к комментариям
+    form:
+      error: ошибка
+      prohibited: Невозможно сохранить комментарий
+      errors:
+        one: ошибка
+        other: ошибок
+
+  helpers:
+    submit:
+      comment:
+        create: Создать комментарий
+    
+    label:
+      comment:
+        body: Ваше сообщение
+
+  activerecord:
+    attributes:
+      comment:
+        body: Сообщение

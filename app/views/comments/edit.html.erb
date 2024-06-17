@@ -1,10 +1,10 @@
-<h1><%= t("comments.edit_comment") %></h1>
+<h1><%= t(".edit_comment") %></h1>
 
 <%= render "form", comment: @comment %>
 
 <br>
 
 <div>
-  <%= link_to "Show this comment", @comment %> |
-  <%= link_to "Back to comments", comments_path %>
+  <%= link_to t('.show'), @comment %> |
+  <%= link_to t('.back_comments'), comments_path %>
 </div>

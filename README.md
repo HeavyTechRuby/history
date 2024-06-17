@@ -1,6 +1,6 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/bd75c70806614261603d/maintainability)](https://codeclimate.com/github/sergio-fry/history/maintainability)
-[![Hits-of-Code](https://hitsofcode.com/github/sergio-fry/history?branch=main)](https://hitsofcode.com/github/sergio-fry/history/view?branch=main)
-[![codecov](https://codecov.io/gh/sergio-fry/history/graph/badge.svg?token=T46MLVIHEE)](https://codecov.io/gh/sergio-fry/history)
+[![Maintainability](https://codeclimate.com/github/HeavyTechRuby/history.png)](https://codeclimate.com/github/HeavyTechRuby/history)
+[![Hits-of-Code](https://hitsofcode.com/github/HeavyTechRuby/history?branch=main)](https://hitsofcode.com/github/HeavyTechRuby/history/view?branch=main)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a3a5daaab0db5b759cc3/test_coverage)](https://codeclimate.com/github/HeavyTechRuby/history/test_coverage)
 
 # History
 
@@ -10,12 +10,31 @@ To run locally you should add local ENV via config files: .env.local, .env.test.
 
 Example config:
 
-```
+```bash
+echo "DATABASE_URL=postgresql://postgres:password@postgres:5432/history_test" >> .env.test.local
 cat .env.test.local
-DATABASE_URL=postgresql://postgres@0.0.0.0:5432/history_test
+```
+Then install dip gem to use docker commands:
+
+```
+gem install dip
+docker-compose build
 ```
 
-* bundle install
-* rails db:create db:migrate
-* make
+Prepare database and container:
+`dip provision`
 
+To run Rails commands:
+`dip rails [command]`
+
+To run /bin/bash session in container:
+`dip runner`
+
+To run Bundler commands:
+`dip bundle [command]`
+
+To run RSpec commands:
+`dip rspec [command]`
+
+To run Cucumber tests:
+`dip cucumber`

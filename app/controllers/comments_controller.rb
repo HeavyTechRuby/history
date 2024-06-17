@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @story, notice: "Comment was successfully created." }
+        format.html { redirect_to @story, notice: t(".created") }
         format.json { render "stories/show", status: :created, location: @comment }
       else
         @comments = @story.comments.order(created_at: :desc)
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @story, notice: "Comment was successfully updated." }
+        format.html { redirect_to @story, notice: t(".updated") }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :show, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class CommentsController < ApplicationController
     @comment.destroy!
 
     respond_to do |format|
-      format.html { redirect_to @story, notice: "Comment was successfully destroyed." }
+      format.html { redirect_to @story, notice: t(".destroyed") }
       format.json { head :no_content }
     end
   end

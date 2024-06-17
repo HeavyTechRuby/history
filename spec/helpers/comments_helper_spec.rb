@@ -1,15 +1,35 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the CommentsHelper. For example:
-#
-# describe CommentsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe CommentsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#localized_time' do
+    let(:time) { Time.new(2023, 6, 1, 14, 30) }
+
+    context 'when using default format' do
+      it 'returns the time in the default format' do
+        expect(helper.localized_time(time)).to eq('01.06.2023 14:30')
+      end
+    end
+
+    context 'when using a custom format' do
+      it 'returns the time with custom format' do
+        custom_format = "%Y-%m-%d %H:%M:%S"
+        expect(helper.localized_time(time, format: custom_format)).to eq('2023-06-01 14:30:00')
+      end
+    end
+
+    context 'when using different locales' do
+      it 'returns the time with custom locale format' do
+        I18n.with_locale(:en) do
+          custom_format = "%Y-%m-%d %I:%M %p"
+          expect(helper.localized_time(time, format: custom_format)).to eq('2023-06-01 02:30 PM')
+        end
+      end
+    end
+
+    context 'with nil time' do
+      it 'returns nil' do
+        expect(helper.localized_time(nil)).to be_nil
+      end
+    end
+  end
 end
