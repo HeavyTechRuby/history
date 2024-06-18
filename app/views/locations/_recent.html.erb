@@ -1,0 +1,5 @@
+<ul>
+  <% RecentLocations.new.each do |location| %>
+    <li><%= link_to location.address, location %></li>
+  <% end %>
+</ul>

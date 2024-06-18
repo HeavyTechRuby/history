@@ -1,0 +1,21 @@
+<% if @stories.present? %>
+  <strong>Stories:</strong>
+
+  <%= link_to "New Story", location_stories_path(@location) %>
+
+  <ul class="list-group">
+    <% @stories.each do |story| %>
+      <li class="list-group-item" %>
+        <small class="text-body-secondary">
+          >
+          <%= localized_time(story.created_at) %>
+          <%= link_to 'pereity', location_story_path(@location, story) %>
+          <%= story.body %>
+        </small>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+
