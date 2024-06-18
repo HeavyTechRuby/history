@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_story, only: %i[ create update destroy ]
   before_action :set_comment, only: %i[ update destroy ]
+  before_action :set_location, only: %i[ create update ]
 
   def edit
   end
@@ -11,7 +12,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @story, notice: t(".created") }
+        format.html { redirect_to location_story_path(@location, @story), notice: t(".created") }
         format.json { render "stories/show", status: :created, location: @comment }
       else
         @comments = @story.comments.order(created_at: :desc)
@@ -52,6 +53,10 @@ class CommentsController < ApplicationController
 
   def set_story
     @story = Story.find(params[:story_id])
+  end
+
+  def set_location
+    @location = Location.find(params[:location_id])
   end
 
   def comment_params

@@ -16,9 +16,14 @@ RSpec.describe "/comments", type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Comment. As you add validations to Comment, be sure to
   # adjust the attributes here as well.
+  let!(:location) {
+    Location.create!(address: 'valid address')
+  }
+
   let!(:story) {
     Story.create!(address: 'valid address',
-                  body: 'valid body')
+                  body: 'valid body',
+                  location: location)
   }
 
   let(:valid_attributes) {

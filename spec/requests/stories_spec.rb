@@ -16,12 +16,22 @@ RSpec.describe "/stories", type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Story. As you add validations to Story, be sure to
   # adjust the attributes here as well.
+  let!(:location) {
+    Location.create!(address: 'without location story cant be created')
+  }
+
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      address: 'valid address name',
+      location: location
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      address: 'shortname',
+      location: location
+    }
   }
 
   describe "GET /index" do
@@ -87,7 +97,9 @@ RSpec.describe "/stories", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          address: 'changed valid address name'
+        }
       }
 
       it "updates the requested story" do

@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: %i[ show edit update destroy ]
+  before_action :set_location, only: %i[ show new ]
 
   # GET /stories or /stories.json
   def index
@@ -24,10 +25,18 @@ class StoriesController < ApplicationController
   # POST /stories or /stories.json
   def create
     @story = Story.new(story_params)
+    @location = Location.find_by(address: @story.address)
+
+    if @location
+      @story.location = @location
+    else
+      @location = Location.create(address: @story.address)
+      @story = @location.stories.new(story_params)
+    end
 
     respond_to do |format|
       if @story.save
-        format.html { redirect_to story_url(@story), notice: "Story was successfully created." }
+        format.html { redirect_to location_story_path(@location, @story), notice: "Story was successfully created." }
         format.json { render :show, status: :created, location: @story }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -63,6 +72,10 @@ class StoriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_story
       @story = Story.find(params[:id])
+    end
+
+    def set_location
+      @location = Location.find_by(id: params[:location_id])
     end
 
     # Only allow a list of trusted parameters through.
