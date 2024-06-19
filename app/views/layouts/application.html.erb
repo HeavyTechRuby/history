@@ -3,6 +3,7 @@
   <head>
     <title>History</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= favicon_link_tag('logos/favicon.ico')%>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,6 +15,19 @@
 
   <body>
     <div class="container">
+
+      <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <%= image_tag("logos/history_logo.webp", size: "60", class: "mx-2") %>
+          <span class="fs-4">History</span>
+        </a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a href="<%=root_path %>" class="nav-link active" aria-current="page">Home</a>
+          </li>
+        </ul>
+      </header>
+
       <%= yield %>
     </div>
 
