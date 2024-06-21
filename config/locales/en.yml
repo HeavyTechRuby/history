@@ -25,7 +25,7 @@ en:
     submit:
       comment:
         create: Create comment
-    
+
     label:
       comment:
         body: Description
@@ -34,3 +34,6 @@ en:
     attributes:
       comment:
         body: Message
+  header:
+    project_name: History
+    home_link: Home
