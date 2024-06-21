@@ -9,7 +9,7 @@
 
 <div>
   <%= link_to "Edit this story", edit_story_path(@story) %> |
-  <%= link_to "Back to stories", location_stories_path(@story) %>
+  <%= link_to "Back to location", location_path(@story.location) %>
 
   <%= button_to "Destroy this story", story_path(@story), method: :delete %>
 </div>
