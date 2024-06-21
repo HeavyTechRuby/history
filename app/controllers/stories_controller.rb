@@ -25,18 +25,10 @@ class StoriesController < ApplicationController
   # POST /stories or /stories.json
   def create
     @story = Story.new(story_params)
-    @location = Location.find_by(address: @story.address)
-
-    if @location
-      @story.location = @location
-    else
-      @location = Location.create(address: @story.address)
-      @story = @location.stories.new(story_params)
-    end
 
     respond_to do |format|
       if @story.save
-        format.html { redirect_to location_story_path(@location, @story), notice: "Story was successfully created." }
+        format.html { redirect_to location_story_path(@story.location, @story), notice: "Story was successfully created." }
         format.json { render :show, status: :created, location: @story }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -1,4 +1,4 @@
-<%= form_with(model: story) do |form| %>
+<%= form_with(model: [@location, story]) do |form| %>
   <% if story.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(story.errors.count, "error") %> prohibited this story from being saved:</h2>

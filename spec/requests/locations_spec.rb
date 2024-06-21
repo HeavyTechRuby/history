@@ -81,7 +81,7 @@ RSpec.describe "/locations", type: :request do
         location = Location.create! valid_attributes
         patch location_url(location), params: { location: new_attributes }
         location.reload
-        skip("Add assertions for updated state")
+        expect(location.address).to eq(new_attributes[:address])
       end
 
       it "redirects to the location" do

@@ -10,9 +10,11 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :locations do
-    resources :stories do
-      resources :comments
-    end
+    resources :stories
+  end
+
+  resources :stories do
+    resources :comments
   end
 
   resources :stories, only: [ :new, :create ]

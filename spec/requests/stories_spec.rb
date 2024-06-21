@@ -20,6 +20,13 @@ RSpec.describe "/stories", type: :request do
     Location.create!(address: 'without location story cant be created')
   }
 
+  let(:existing_valid_attributes) {
+    {
+      address: Location.last.address,
+      location: location
+    }
+  }
+
   let(:valid_attributes) {
     {
       address: 'valid address name',
@@ -37,7 +44,7 @@ RSpec.describe "/stories", type: :request do
   describe "GET /index" do
     it "renders a successful response" do
       Story.create! valid_attributes
-      get stories_url
+      get root_path
       expect(response).to be_successful
     end
   end
@@ -45,7 +52,7 @@ RSpec.describe "/stories", type: :request do
   describe "GET /show" do
     it "renders a successful response" do
       story = Story.create! valid_attributes
-      get story_url(story)
+      get location_story_url(location, story)
       expect(response).to be_successful
     end
   end
@@ -60,22 +67,53 @@ RSpec.describe "/stories", type: :request do
   describe "GET /edit" do
     it "renders a successful response" do
       story = Story.create! valid_attributes
-      get edit_story_url(story)
+      get edit_location_story_url(location, story)
       expect(response).to be_successful
     end
   end
 
   describe "POST /create" do
     context "with valid parameters" do
-      it "creates a new Story" do
-        expect {
+      context "create a new location" do
+        it "creates a new Story" do
+          expect {
+            post stories_url, params: { story: valid_attributes }
+          }.to change(Story, :count).by(1)
+        end
+
+        it "creates a new Location after a create Story without existing address" do
+          expect {
+            post stories_url, params: { story: valid_attributes }
+          }.to change(Location, :count).by(1)
+        end
+
+        it "redirects to the created new story and creates a new location" do
           post stories_url, params: { story: valid_attributes }
-        }.to change(Story, :count).by(1)
+          story_result = Story.last
+
+          expect(response).to redirect_to(location_story_path(story_result.location, story_result))
+        end
       end
 
-      it "redirects to the created story" do
-        post stories_url, params: { story: valid_attributes }
-        expect(response).to redirect_to(story_url(Story.last))
+      context "using existing location location" do
+        it "creates a new Story" do
+          expect {
+            post stories_url, params: { story: existing_valid_attributes }
+          }.to change(Story, :count).by(1)
+        end
+
+        it "not creating a new location when use existing location address" do
+          expect {
+            post stories_url, params: { story: existing_valid_attributes }
+          }.to change(Location, :count).by(0)
+        end
+
+        it "redirects to the created new story and creates a new location" do
+          post stories_url, params: { story: existing_valid_attributes }
+          created_story = Story.last
+
+          expect(response).to redirect_to(location_story_path(location, created_story))
+        end
       end
     end
 
@@ -106,7 +144,7 @@ RSpec.describe "/stories", type: :request do
         story = Story.create! valid_attributes
         patch story_url(story), params: { story: new_attributes }
         story.reload
-        skip("Add assertions for updated state")
+        expect(story.address).to eq(new_attributes[:address])
       end
 
       it "redirects to the story" do
