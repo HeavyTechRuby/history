@@ -9,8 +9,7 @@
         <small class="text-body-secondary">
           >
           <%= localized_time(story.created_at) %>
-          <%= link_to 'pereity', location_story_path(@location, story) %>
-          <%= story.body %>
+          <%= link_to story.body, location_story_path(@location, story) %>
         </small>
       </li>
     <% end %>
