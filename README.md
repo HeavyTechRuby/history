@@ -33,6 +33,9 @@ To run /bin/bash session in container:
 To run Bundler commands:
 `dip bundle [command]`
 
+To run All Test suite:
+`dip make`
+
 To run RSpec commands:
 `dip rspec [command]`
 
