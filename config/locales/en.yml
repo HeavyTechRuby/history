@@ -69,9 +69,10 @@ en:
     submit:
       story:
         create: Create story
+
       comment:
         create: Create comment
-    
+
     label:
       comment:
         body: Description
@@ -81,6 +82,7 @@ en:
       story:
         address: Address
         body: Story
+
       comment:
         body: Message
 
@@ -89,3 +91,8 @@ en:
       new_story: New story
       recent_locations: Recent locations
       building_history: Building History
+
+  header:
+    project_name: History
+    home_link: Home
+
