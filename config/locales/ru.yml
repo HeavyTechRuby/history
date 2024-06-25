@@ -71,9 +71,10 @@ ru:
     submit:
       story:
         create: Создать историю
+
       comment:
         create: Создать комментарий
-    
+
     label:
       comment:
         body: Ваше сообщение
@@ -92,3 +93,7 @@ ru:
       new_story: Новая история
       recent_locations: Недавние локации
       building_history: История зданий
+
+  header:
+    project_name: История Дома
+    home_link: Домой
