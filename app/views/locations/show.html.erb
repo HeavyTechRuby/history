@@ -3,8 +3,8 @@
 <%= render @location %>
 
 <div>
-  <%= link_to "Edit this location", edit_location_path(@location) %> |
-  <%= link_to "Back to locations", root_path %>
+  <%= link_to t('.edit'), edit_location_path(@location) %> |
+  <%= link_to t('.back'), root_path %>
 
-  <%= button_to "Destroy this location", @location, method: :delete %>
+  <%= button_to t('.destory'), @location, method: :delete %>
 </div>
