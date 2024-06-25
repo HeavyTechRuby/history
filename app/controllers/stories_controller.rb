@@ -29,7 +29,7 @@ class StoriesController < ApplicationController
     respond_to do |format|
       if @story.save
         format.html { redirect_to location_story_path(@story.location, @story), notice: "Story was successfully created." }
-        format.json { render :show, status: :created, location: @story }
+        format.json { render :show, status: :created }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @story.errors, status: :unprocessable_entity }
