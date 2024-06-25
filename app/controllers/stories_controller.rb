@@ -39,15 +39,7 @@ class StoriesController < ApplicationController
 
   # PATCH/PUT /stories/1 or /stories/1.json
   def update
-    respond_to do |format|
-      if @story.update(story_params)
-        format.html { redirect_to story_url(@story), notice: "Story was successfully updated." }
-        format.json { render :show, status: :ok, location: @story }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @story.errors, status: :unprocessable_entity }
-      end
-    end
+    update_record(@story, story_params, story_url(@story))
   end
 
   # DELETE /stories/1 or /stories/1.json
