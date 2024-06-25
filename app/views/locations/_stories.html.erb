@@ -5,12 +5,9 @@
 
   <ul class="list-group">
     <% @stories.each do |story| %>
-      <li class="list-group-item" %>
-        <small class="text-body-secondary">
-          >
-          <%= localized_time(story.created_at) %>
-          <%= link_to story.body, location_story_path(@location, story) %>
-        </small>
+      <li class="list-group-item">
+        <%= localized_time(story.created_at) %>
+        <%= link_to strip_tags(story.body), story_path(story) %>
       </li>
     <% end %>
   </ul>
