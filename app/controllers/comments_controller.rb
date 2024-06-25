@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_story, only: %i[ create update destroy ]
   before_action :set_comment, only: %i[ update destroy ]
-  # before_action :set_location, only: %i[ create update ]
 
   def edit
   end
@@ -53,10 +52,6 @@ class CommentsController < ApplicationController
 
   def set_story
     @story = Story.find(params[:story_id])
-  end
-
-  def set_location
-    @location = Location.find(params[:location_id])
   end
 
   def comment_params
