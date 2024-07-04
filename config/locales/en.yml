@@ -63,9 +63,12 @@ en:
         other: errors
 
     index:
-      comments_list: Комментарии
+      comments_list: Comments
 
   helpers:
+    crud:
+      update_success: Successfully updated
+
     submit:
       story:
         create: Create story

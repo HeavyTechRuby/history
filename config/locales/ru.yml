@@ -68,6 +68,9 @@ ru:
       comments_list: Комментарии
 
   helpers:
+    crud:
+      update_success: Успешно обновлено
+
     submit:
       story:
         create: Создать историю
