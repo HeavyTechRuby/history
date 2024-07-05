@@ -4,6 +4,7 @@ class Story < ApplicationRecord
   belongs_to :location
 
   validates :address, presence: true, length: { minimum: 10 }
+  validates :body, presence: true
 
   before_validation :set_location
 

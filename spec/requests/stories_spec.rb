@@ -22,6 +22,7 @@ RSpec.describe "/stories", type: :request do
 
   let(:existing_valid_attributes) {
     {
+      body: 'example of valid exists body',
       address: Location.last.address,
       location: location
     }
@@ -29,6 +30,7 @@ RSpec.describe "/stories", type: :request do
 
   let(:valid_attributes) {
     {
+      body: 'example of valid body',
       address: 'valid address name',
       location: location
     }
@@ -123,7 +125,6 @@ RSpec.describe "/stories", type: :request do
           post stories_url, params: { story: invalid_attributes }
         }.to change(Story, :count).by(0)
       end
-
 
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
         post stories_url, params: { story: invalid_attributes }
