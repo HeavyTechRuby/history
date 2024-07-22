@@ -28,7 +28,7 @@ class StoriesController < ApplicationController
 
     respond_to do |format|
       if @story.save
-        format.html { redirect_to location_story_path(@story.location, @story), notice: "Story was successfully created." }
+        format.html { redirect_to location_story_path(@story.location, @story), notice: t(".created") }
         format.json { render :show, status: :created }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -47,7 +47,7 @@ class StoriesController < ApplicationController
     @story.destroy!
 
     respond_to do |format|
-      format.html { redirect_to stories_url, notice: "Story was successfully destroyed." }
+      format.html { redirect_to stories_url, notice: t(".destroyed") }
       format.json { head :no_content }
     end
   end

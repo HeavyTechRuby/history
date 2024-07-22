@@ -4,13 +4,16 @@ ru:
     story: История
     recent_stories: Недавние истории
     stories: Истории
+    created: История успешно создана.
+    updated: История успешно обновлена.
+    destroyed: История успешно удалена.
     address: Адрес
     body: Тело
 
     index:
       stories: Истории
       new_story: Создать новую историю
-    
+
     edit:
       edit: Редактировать Историю
       show: Показать Историю
@@ -24,13 +27,16 @@ ru:
       back: Назад к Историям
       edit: Редактировать Историю
       destroy: Удалить Историю
-      
+
 
   locations:
     locations: Локации
     edit_location: Редактировать локацию
     show: Перейти на локацию
     back: Назад к локациям
+    created: Локация успешно создана.
+    updated: Локация успешно обновлена.
+    destroyed: Локация успешно удалёна.
     edit: Редактировать локацию
     destroy: Удалить локацию
     new_location: Новая локация
@@ -42,6 +48,13 @@ ru:
     show:
       back: Назад к локациям
       edit: Редактировать историю
+
+      form:
+        error: ошибка
+        prohibited: Невозможно сохранить локацию
+        errors:
+          one: ошибка
+          other: ошибки
 
 
   comments:
@@ -63,7 +76,7 @@ ru:
       errors:
         one: ошибка
         other: ошибок
-    
+
     index:
       comments_list: Комментарии
 
