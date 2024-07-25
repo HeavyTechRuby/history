@@ -1,0 +1,17 @@
+<% if @stories.present? %>
+  <strong><%= t(".stories") %>:</strong>
+
+  <%= link_to t(".new_story"), location_stories_path(@location) %>
+
+  <ul class="list-group">
+    <% @stories.each do |story| %>
+      <li class="list-group-item">
+        <%= localized_time(story.created_at) %>
+        <%= link_to strip_tags(story.body), story_path(story) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+

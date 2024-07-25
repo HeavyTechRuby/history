@@ -8,10 +8,10 @@
 </p>
 
 <div>
-  <%= link_to "Edit this story", edit_story_path(@story) %> |
-  <%= link_to "Back to stories", stories_path %>
+  <%= link_to t('.edit'), edit_story_path(@story) %> |
+  <%= link_to t('.back'), location_path(@story.location) %>
 
-  <%= button_to "Destroy this story", @story, method: :delete %>
+  <%= button_to t('.destroy'), story_path(@story), method: :delete %>
 </div>
 
 <%= render template: "comments/index" %>

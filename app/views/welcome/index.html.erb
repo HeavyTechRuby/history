@@ -1,8 +1,7 @@
-<h1>Building History</h1>
-<p>Building history</p>
+<h1><%= t('.building_history') %></h1>
 
-<%= link_to t("new_story"), new_story_path %>
+<%= link_to t(".new_story"), new_story_path %>
 
-<h2><%= t("recent_stories") %></h2> 
+<h2><%= t(".recent_locations") %></h2>
 
-<%= render partial: 'stories/recent' %>
+<%= render partial: 'locations/recent' %>

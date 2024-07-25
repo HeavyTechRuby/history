@@ -16,9 +16,14 @@ RSpec.describe "/comments", type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Comment. As you add validations to Comment, be sure to
   # adjust the attributes here as well.
+  let!(:location) {
+    Location.create!(address: 'valid address')
+  }
+
   let!(:story) {
     Story.create!(address: 'valid address',
-                  body: 'valid body')
+                  body: 'valid body',
+                  location: location)
   }
 
   let(:valid_attributes) {
@@ -35,10 +40,10 @@ RSpec.describe "/comments", type: :request do
     }
   }
 
-  describe "GET stoories/show" do
+  describe "GET stories/show" do
     it "renders a successful response" do
       Comment.create!(valid_attributes)
-      get story_url(id: story.id)
+      get story_url(story)
       expect(response).to be_successful
     end
   end
@@ -63,7 +68,6 @@ RSpec.describe "/comments", type: :request do
           post story_comments_url(story), params: { comment: invalid_attributes }
         }.to change(Comment, :count).by(0)
       end
-
 
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
         post story_comments_url(story), params: { comment: invalid_attributes }

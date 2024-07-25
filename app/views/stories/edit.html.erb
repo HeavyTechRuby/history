@@ -1,10 +1,10 @@
-<h1>Editing story</h1>
+<h1><%= t('.edit')%></h1>
 
-<%= render "form", story: @story %>
+<%= render "form", story: @story, location: @location %>
 
 <br>
 
 <div>
-  <%= link_to "Show this story", @story %> |
-  <%= link_to "Back to stories", stories_path %>
+  <%= link_to t('.show'), @story %> |
+  <%= link_to t('.back'), location_stories_path(@story) %>
 </div>

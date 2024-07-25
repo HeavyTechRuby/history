@@ -1,0 +1,29 @@
+<%= form_with(model: location) do |form| %>
+  <% if location.errors.any? %>
+    <div style="color: red">
+    <h4>
+      <%= t('locations.form.prohibited') %>:
+    </h4>
+
+      <ul>
+        <% location.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :stories_id, style: "display: block" %>
+    <%= form.text_field :stories_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

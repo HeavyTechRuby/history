@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @story, notice: t(".created") }
+        format.html { redirect_to story_path(@story), notice: t(".created") }
         format.json { render "stories/show", status: :created, location: @comment }
       else
         @comments = @story.comments.order(created_at: :desc)

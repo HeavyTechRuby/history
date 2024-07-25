@@ -30,6 +30,10 @@ end
   click_on item
 end
 
+Затем('дебаг') do
+  binding.irb
+end
+
 # TODO: use 'item' to select the right editor
 When('заполняю многострочное поле {string} со значением {string}') do |_item, text|
   find('trix-editor').click.set(text)
