@@ -40,6 +40,13 @@ interaction:
       RAILS_ENV: test
     command: bundle exec ./bin/cucumber
 
+  make:
+    description: Run all test suite
+    service: web
+    environment:
+      RAILS_ENV: test
+    command: make
+
   rails:
     description: Run Rails commands
     service: web

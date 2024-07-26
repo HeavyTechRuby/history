@@ -9,7 +9,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "welcome#index"
 
+  resources :locations do
+    resources :stories
+  end
+
   resources :stories do
     resources :comments
   end
+
+  resources :stories, only: [ :new, :create ]
 end

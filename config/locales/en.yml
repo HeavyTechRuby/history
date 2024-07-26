@@ -1,7 +1,60 @@
 en:
-  new_story: New story
-  story: Story
-  recent_stories: Recent Stories
+  stories:
+    new_story: New story
+    story: Story
+    recent_stories: Recent Stories
+    stories: Stories
+    created: Story was successfully created.
+    updated: Story was successfully updated.
+    destroyed: Story was successfully destroyed.
+    address: Address
+    body: Body
+
+    index:
+      stories: Stories
+      new_story: New Story
+
+    edit:
+      edit: Editing Story
+      show: Show this story
+      back: Back to stories
+
+    new:
+      new_story: New story
+      back: Back to stories
+
+    show:
+      back: Back to stories
+      edit: Editing Story
+      destroy: Destroy Story
+
+  locations:
+    locations: Locations
+    edit_location: Editing locations
+    new_location: New location
+    show: Show this location
+    created: Location was successfully created.
+    updated: Location was successfully updated.
+    destroyed: Location was successfully destroyed.
+    back: Back to locations
+    edit: Edit this location
+    destroy: Destroy this location
+
+    stories:
+      stories: Stories
+      new_story: New story
+
+    show:
+      back: Back to Locations
+      edit: Edit Story
+
+    form:
+      error: error
+      prohibited: Unable to save location
+      errors:
+        one: error
+        other: errors
+
   comments:
     recent_comments: Recent comments
     add_comment: Add a comment
@@ -14,6 +67,7 @@ en:
     show: Show this comment
     destroy: Destroy this comment
     back_comments: Back to comments
+
     form:
       error: error
       prohibited: Unable to save comment
@@ -21,16 +75,39 @@ en:
         one: error
         other: errors
 
+    index:
+      comments_list: Comments
+
   helpers:
+    crud:
+      update_success: Successfully updated
+
     submit:
+      story:
+        create: Create story
+
       comment:
         create: Create comment
-    
+
     label:
       comment:
         body: Description
 
   activerecord:
     attributes:
+      story:
+        address: Address
+        body: Story
+
       comment:
         body: Message
+
+  welcome:
+    index:
+      new_story: New story
+      recent_locations: Recent locations
+      building_history: Building History
+
+  header:
+    project_name: History
+    home_link: Home

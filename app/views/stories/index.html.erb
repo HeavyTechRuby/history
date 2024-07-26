@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Stories</h1>
+<h1><%= t('.stories') %></h1>
 
 <%= render partial: 'stories/recent' %>
 
-<%= link_to "New story", new_story_path %>
+<%= link_to t('.new_story'), new_story_path %>

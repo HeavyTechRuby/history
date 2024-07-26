@@ -1,7 +1,62 @@
 ru:
-  new_story: Новая история
-  story: История
-  recent_stories: Недавние истории
+  stories:
+    new_story: Новая история
+    story: История
+    recent_stories: Недавние истории
+    stories: Истории
+    created: История успешно создана.
+    updated: История успешно обновлена.
+    destroyed: История успешно удалена.
+    address: Адрес
+    body: Тело
+
+    index:
+      stories: Истории
+      new_story: Создать новую историю
+
+    edit:
+      edit: Редактировать Историю
+      show: Показать Историю
+      back: Назад к Историям
+
+    new:
+      new_story: Новая история
+      back: Назад к Историям
+
+    show:
+      back: Назад к Историям
+      edit: Редактировать Историю
+      destroy: Удалить Историю
+
+
+  locations:
+    locations: Локации
+    edit_location: Редактировать локацию
+    show: Перейти на локацию
+    back: Назад к локациям
+    created: Локация успешно создана.
+    updated: Локация успешно обновлена.
+    destroyed: Локация успешно удалёна.
+    edit: Редактировать локацию
+    destroy: Удалить локацию
+    new_location: Новая локация
+
+    stories:
+      stories: Истории
+      new_story: Новая история
+
+    show:
+      back: Назад к локациям
+      edit: Редактировать историю
+
+      form:
+        error: ошибка
+        prohibited: Невозможно сохранить локацию
+        errors:
+          one: ошибка
+          other: ошибки
+
+
   comments:
     recent_comments: Последние комментарии
     add_comment: Оставить комментарий
@@ -14,6 +69,7 @@ ru:
     show: Открыть комментарий
     destroy: Удалить комментарий
     back_comments: Назад к комментариям
+
     form:
       error: ошибка
       prohibited: Невозможно сохранить комментарий
@@ -21,16 +77,39 @@ ru:
         one: ошибка
         other: ошибок
 
+    index:
+      comments_list: Комментарии
+
   helpers:
+    crud:
+      update_success: Успешно обновлено
+
     submit:
+      story:
+        create: Создать историю
+
       comment:
         create: Создать комментарий
-    
+
     label:
       comment:
         body: Ваше сообщение
 
   activerecord:
     attributes:
+      story:
+        address: Адрес
+        body: История
+
       comment:
         body: Сообщение
+
+  welcome:
+    index:
+      new_story: Новая история
+      recent_locations: Недавние локации
+      building_history: История зданий
+
+  header:
+    project_name: История Дома
+    home_link: Домой

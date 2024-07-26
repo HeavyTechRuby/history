@@ -37,3 +37,6 @@
 
 /.rspec_status
 /coverage/*
+
+# asdf
+.tool-versions

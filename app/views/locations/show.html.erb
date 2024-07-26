@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @location %>
+
+<div>
+  <%= link_to t('.edit'), edit_location_path(@location) %> |
+  <%= link_to t('.back'), root_path %>
+
+  <%= button_to t('.destory'), @location, method: :delete %>
+</div>
