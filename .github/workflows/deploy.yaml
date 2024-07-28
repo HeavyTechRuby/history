@@ -1,4 +1,4 @@
-name: 'deploy'
+name: "deploy"
 
 on:
   push:
@@ -17,6 +17,6 @@ jobs:
       - name: Push to dokku
         uses: dokku/github-action@master
         with:
-          branch: 'main'
+          branch: "master"
           git_remote_url: ${{ secrets.DOKKU_GIT_REMOTE_URL }} # example: 'ssh://dokku@dokku.me:22/appname'
           ssh_private_key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
