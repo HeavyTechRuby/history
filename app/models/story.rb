@@ -8,8 +8,6 @@ class Story < ApplicationRecord
 
   before_validation :set_location
 
-  private
-
   def set_location
     location = Location.find_by(address: self.address)
 
